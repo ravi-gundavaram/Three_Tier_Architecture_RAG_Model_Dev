@@ -15,7 +15,7 @@ export class UsersService {
    */
   getAllUsers(): any[] {
     return this.users.map((user) => {
-      const { password, ...rest } = user; // Exclude passwords for security
+      const { password, ...rest } = user; 
       return rest;
     });
   }
@@ -30,7 +30,7 @@ export class UsersService {
     if (!user) {
       throw new HttpException('User not found', HttpStatus.NOT_FOUND);
     }
-    const { password, ...rest } = user; // Exclude password
+    const { password, ...rest } = user; 
     return rest;
   }
 
@@ -53,7 +53,7 @@ export class UsersService {
       role,
     };
     this.users.push(newUser);
-    const { password: _, ...rest } = newUser; // Exclude password from response
+    const { password: _, ...rest } = newUser; 
     return rest;
   }
 
@@ -69,7 +69,7 @@ export class UsersService {
       throw new HttpException('User not found', HttpStatus.NOT_FOUND);
     }
     user.role = role;
-    const { password, ...rest } = user; // Exclude password
+    const { password, ...rest } = user; 
     return rest;
   }
 
